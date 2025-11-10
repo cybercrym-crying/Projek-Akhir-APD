@@ -33,9 +33,9 @@ def register(penyimpanan_akun: dict) -> dict:
                     and password == penyimpanan_akun[username][0]
                 ):
                     if penyimpanan_akun[username][1] == "admin":
-                        return "admin"
+                        return username
                     else:
-                        return
+                        return username
 
             case "Keluar":
                 return "Keluar"
