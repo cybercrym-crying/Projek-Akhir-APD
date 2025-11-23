@@ -36,7 +36,6 @@ if __name__ == "__main__":
             # user program
             case "user":
                 while True:
-                    clear_terminal()
                     if var.diskon > 0:
                         print(f"Hari Ini DISKONNN {int(var.diskon*100)}%")
                     pilihan = qs.select(
