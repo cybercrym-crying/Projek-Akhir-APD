@@ -18,14 +18,14 @@ def status(username):
             tabel_status = PrettyTable()
             total = 0
             tabel_status.set_style(TableStyle.SINGLE_BORDER)
-            tabel_status.field_names = ["No", "Nama Produk", "Harga", "Jumlah"]
+            tabel_status.field_names = ["No", "Nama Produk", "Jumlah", "Harga"]
             for id, barang in enumerate(i["barang"].values(), start=1):
                 tabel_status.add_row(
-                    [id, barang["nama"], barang["harga"], barang["jumlah"]]
+                    [id, barang["nama"], barang["jumlah"], f"Rp.{barang['harga']:,}"]
                 )
                 total += barang["jumlah"] * barang["harga"]
             tabel_status.add_row(["", "", "", ""])
-            tabel_status.add_row(["", "", "Total", total])
+            tabel_status.add_row(["", "", "Total", f"Rp.{total:,}"])
             print(tabel_status)
 
             # cek pengiriman sudah sampai atau belum
@@ -57,8 +57,8 @@ def status(username):
                                 )
                             ],
                             "Nama Barang": [barang["nama"]],
-                            "Harga": [barang["harga"]],
                             "Jumlah": [barang["jumlah"]],
+                            "Harga": [f"Rp.{barang['harga']:,}"],
                         }
                     df_baru = pd.DataFrame(data_baru)
                     df_baru.to_csv(

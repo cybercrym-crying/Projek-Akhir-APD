@@ -3,7 +3,7 @@ import variabel_global as var
 
 
 def history(username):
-    if var.history_pesanan:
+    if var.history_pesanan[username]:
         tabel_history = PrettyTable()
         tabel_history.set_style(TableStyle.SINGLE_BORDER)
         total = 0
