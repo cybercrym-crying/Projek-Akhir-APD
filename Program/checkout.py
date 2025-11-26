@@ -180,13 +180,12 @@ def hapus_Produk_Keranjang(username):
         ):
             for id in range(int(pilihan_hapus), key_akhir):
                 if id < key_akhir:
-                    salinan_keranjang_belanja[username][id] = salinan_keranjang_belanja[
-                        username
-                    ][id + 1]
+                    salinan_keranjang_belanja[username][id] = salinan_keranjang_belanja[username][id + 1]
             del salinan_keranjang_belanja[username][key_akhir]
             var.keranjang_belanja[username] = deepcopy(
                 salinan_keranjang_belanja[username]
             )
+            print("\n- Barang berhasil dihapus dari keranjang belanja.\n")
         else:
             print("\n!! Input Tidak Valid. Silahkan coba lagi. !!\n")
             hapus_Produk_Keranjang(username)

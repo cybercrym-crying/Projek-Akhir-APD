@@ -10,13 +10,13 @@ def tambah_barang():
     harga = qs.text("Harga barang:").ask()
     stock = qs.text("Stok barang:").ask()
     if nama == "":
-        print("\n!! Nama Produk Tidak Boleh Kosong !!\n")
+        print("\n!! Input Tidak Boleh Kosong !!\n")
         return
     if not (harga) or not (harga.isdigit()) or int(harga) <= 0:
-        print("\n!! Harga Tidak Valid !!\n")
+        print("\n!! Input Tidak Valid !!\n")
         return
     if not (stock) or not (stock.isdigit()) or int(stock) <= 0:
-        print("\n!! Stock Tidak Valid !!\n")
+        print("\n!! Input Tidak Valid !!\n")
         return
     for barang in var.daftar_barang.values():
         if barang["nama"].lower() == nama.lower():
