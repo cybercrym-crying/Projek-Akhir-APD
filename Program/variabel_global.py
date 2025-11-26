@@ -1,5 +1,4 @@
-from datetime import datetime, timedelta
-
+from datetime import datetime
 diskon = 0.05
 history_pesanan = {"a": {}}
 akun = {
