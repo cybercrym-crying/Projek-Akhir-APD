@@ -124,6 +124,7 @@ def Tambah_Barang_ke_Keranjang(username):
                 else:
                     print("\n!! Jumlah tidak valid. Silahkan coba lagi.!!\n")
                     Tambah_Barang_ke_Keranjang(username)
+                    return
                 var.keranjang_belanja[username][
                     len(var.keranjang_belanja[username]) + 1
                 ] = {

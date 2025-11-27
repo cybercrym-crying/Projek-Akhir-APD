@@ -3,12 +3,10 @@ import pandas as pd
 import csv
 import matplotlib.pyplot as plt
 
-NAMA_FILE_PEMASUKAN = "data_pemasukan.csv"
-
 
 def list_data_pemasukan():
     try:
-        df = pd.read_csv(NAMA_FILE_PEMASUKAN)
+        df = pd.read_csv("data_pemasukan.csv")
         df["Tanggal"] = pd.to_datetime(df["Tanggal"])
         df["Total"] = df["Harga"] + df["Jumlah"]
         df_per_hari = df.groupby(df["Tanggal"].dt.date)["Total"].sum()
@@ -24,7 +22,7 @@ def list_data_pemasukan():
         plt.tight_layout()
         plt.show()
 
-        with open(NAMA_FILE_PEMASUKAN, mode="r") as file:
+        with open("data_pemasukan.csv", mode="r") as file:
             reader = csv.reader(file)
             table = PrettyTable()
             table.set_style(TableStyle.SINGLE_BORDER)
